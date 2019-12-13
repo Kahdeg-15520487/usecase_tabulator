@@ -1,0 +1,38 @@
+Biểu đồ use case Đăng ký tài khoản - Account Registration
+Biểu đồ use case Quên mật khẩu - Forgot password
+Biểu đồ use case Chỉnh sửa thông tin cá nhân
+Biểu đồ use case Tra cứu sản phẩm
+Biểu đồ use case Xem thông tin sản phẩm
+Biểu đồ use case Xem Thông tin đơn hàng
+Biểu đồ use case Xem danh sách sản phẩm yêu thích
+Biểu đồ use case Xem thông tin lịch sử giao hàng
+Biểu đồ use case Xem thông báo (Notification)
+Biểu đồ use case Xem lịch sử giao dịch
+Biểu đồ use case Xem danh sách đánh giá sản phẩm
+Biểu đồ use case Đặt câu hỏi
+Biểu đồ use case Làm khảo sát
+Biểu đồ use case Xóa bài viết
+Biểu đồ use case Thích bài viết
+Biểu đồ use case Chỉnh sửa bài viết
+Biểu đồ use case Lưu bài viết
+Biểu đồ use case Bình luận bài viết
+Biểu đồ use case Đăng bài viết
+Biểu đồ use case Xóa User
+Biểu đồ use case Thêm User
+Biểu đồ use case Chỉnh sửa thông tin cho User
+Biểu đồ use case Tìm kiếm User
+Biểu đồ use case Thêm sản phẩm
+Biểu đồ use case Xóa sản phẩm
+Biểu đồ use case Cập nhật sản phẩm
+Biểu đồ use case Tìm kiếm sản phẩm
+Biểu đồ use case Xóa hoạt chất
+Biểu đồ use case Cập nhật hoạt chất
+Biểu đồ use case Tìm kiếm hoạt chất
+Biểu đồ use case Xóa sản phẩm
+Biểu đồ use case Cập nhật sản phẩm
+Biểu đồ use case Tìm kiếm sản phẩm
+Biểu đồ use case Xóa đơn hàng
+Biểu đồ use case Duyệt đơn hàng
+Biểu đồ use case Tìm kiếm đơn hàng
+Biểu đồ use case Xem câu hỏi
+Biểu đồ use case Trả lời câu hỏi

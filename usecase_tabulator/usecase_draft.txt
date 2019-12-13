@@ -1,0 +1,42 @@
+Name Đăng ký tài khoản - Account Registration
+Purpose	Tạo tài khoản cho người dùng
+Actor	Khách hàng - User
+PreCond	Không có
+PostCond	Không có
+MainFlow
+	1. Người dùng nhập các thông tin cơ bản dựa trên mẫu có sẵn
+	2. Hệ thống xác nhận các thông tin đúng định dạng
+	3. Hệ thống tạo ra 1 tài khoản cho người dùng
+	4. Hệ thống gửi email xác thực đăng ký cho người dùng
+	5. Người dùng xác thực email
+	6. Hệ thống thực hiện active tài khoản
+AltFlow
+	5.a Người dùng không nhận được email xác thực
+	5.a1 Hệ thống gửi lại email xác thực đăng ký cho người dùng
+	5.a2 Người dùng xác thực email
+	Use case tiếp tục bước 6
+	2.b Người dùng nhập các thông tin cơ bản sai hoặc thiếu so với mẫu có sẵn.
+	2.b1 Hệ thống thông báo cho người dùng về các mục bị nhập sai hoặc thiếu.
+	2.b2 Người dùng nhập đúng các thông tin cơ bản dựa trên mẫu có sẵn
+	Use case tiếp tục bước 3
+Exception
+	2.c Người dùng nhập email đã có sẵn trong hệ thống
+	2.c1 Hệ thống thông báo cho người dùng biết email này đã được đăng ký
+	2.c2 Hệ thống hỏi người dùng liệu có muốn đăng nhập hay không
+	2.c3 Người dùng lựa chọn có
+	Use case tiếp tục Use Case |UC đăng nhập|
+OtherEvent	Không có
+Markup
+User -> System: Thông tin đăng ký
+note right of System: Kiểm tra tính đúng đắn thông tin đăng ký
+System --> User: Kết quả kiểm tra
+alt Thông tin đăng ký đúng
+System -> Database: Tạo tài khoản với thông tin đăng ký
+else Thông tin đăng ký sai
+System --> User: Hiển thị lỗi
+end
+
+System --> User: Gửi email xác thực đăng ký
+User -> System: Xác thực email
+note right of System: Thực hiện active tài khoản
+=============

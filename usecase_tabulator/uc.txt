@@ -1,0 +1,517 @@
+Tên	"Đăng ký tài khoản - Account Registration"
+Mục đích	"Tạo tài khoản cho người dùng"
+Tác nhân	"Khách hàng - User"
+Điều kiện trước	"Không có"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Người dùng nhập các thông tin cơ bản dựa trên mẫu có sẵn
+2. Hệ thống xác nhận các thông tin đúng định dạng
+3. Hệ thống tạo ra 1 tài khoản cho người dùng
+4. Hệ thống gửi email xác thực đăng ký cho người dùng
+5. Người dùng xác thực email
+6. Hệ thống thực hiện active tài khoản"
+Luồng sự kiện phụ	"5.a Người dùng không nhận được email xác thực
+5.a1 Hệ thống gửi lại email xác thực đăng ký cho người dùng
+5.a2 Người dùng xác thực email
+Use case tiếp tục bước 6
+2.b Người dùng nhập các thông tin cơ bản sai hoặc thiếu so với mẫu có sẵn.
+2.b1 Hệ thống thông báo cho người dùng về các mục bị nhập sai hoặc thiếu.
+2.b2 Người dùng nhập đúng các thông tin cơ bản dựa trên mẫu có sẵn
+Use case tiếp tục bước 3"
+Các ngoại lệ	"2.c Người dùng nhập email đã có sẵn trong hệ thống
+2.c1 Hệ thống thông báo cho người dùng biết email này đã được đăng ký
+2.c2 Hệ thống hỏi người dùng liệu có muốn đăng nhập hay không
+2.c3 Người dùng lựa chọn có
+Use case tiếp tục Use Case |UC đăng nhập|"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Quên mật khẩu - Forgot password"
+Mục đích	"Tạo lại mật khẩu cho người dùng"
+Tác nhân	"User"
+Điều kiện trước	"Không có"
+Điều kiện sau	"Người dùng có được mật khẩu mới để đăng nhập"
+Luồng sự kiện chính	"1. Người dùng nhập vào email đã sử dụng để đăng ký tài khoản
+2. Hệ thống gửi email thông báo về việc reset password cùng 1 liên kết tới trang reset password
+3. Người dùng xem email
+4. Người dùng truy cập trang reset password
+5. Người dùng nhập mật khẩu mới
+6. Hệ thống tiến hành hash và salt mật khẩu mới và lưu vào csdl"
+Luồng sự kiện phụ	"3.a Người dùng không nhận được email reset password
+Use case tiếp tục bước 1"
+Các ngoại lệ	"1.b Người dùng nhập vào email không tồn tại trong hệ thống
+1.b1 Hệ thống thông báo email không tồn tại trong hệ thống
+Use case dừng lại"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Chỉnh sửa thông tin cá nhân"
+Mục đích	"User chỉnh sửa thông tin của mình"
+Tác nhân	"User"
+Điều kiện trước	"User đã đăng nhập thành công"
+Điều kiện sau	"User thay đổi thông tin của mình"
+Luồng sự kiện chính	"1. User thực hiện thay đổi thông tin của mình trên mẫu
+2. Hệ thống xác nhận các thông tin đã được thay đổi đúng định dạng
+3. Hệ thống lưu trữ thay đổi vào Cơ sở dữ liệu"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"2a. Thông tin sai định dạng
+2a1. Hệ thống thông báo User về lỗi thông tin
+Usecase tiếp tục bước 1"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Tra cứu sản phẩm"
+Mục đích	"User tra cứu sản phẩm trên hệ thống"
+Tác nhân	"User"
+Điều kiện trước	"Không có"
+Điều kiện sau	"Hiển thị danh sách tra cứu sản phẩm với yêu cầu tra cứu của User"
+Luồng sự kiện chính	"1. User nhập yêu cầu tra cứu vào Hệ thống
+2. Hệ thống thực hiện truy xuất Cơ sở dữ liệu dựa trên yêu cầu tra cứu
+3. Hệ thống trả về kết quả tra cứu sản phẩm	"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Xem thông tin sản phẩm"
+Mục đích	"User xem thông tin chi tiết của sản phẩm"
+Tác nhân	"User"
+Điều kiện trước	"Không có"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. User chọn vào sản phẩm muốn xem
+2. Hệ thống truy xuất Cơ sở dữ liệu để lấy chi tiết sản phẩm được chọn
+3. Hệ thống hiển thị chi tiết sản phẩm được chọn"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Xem Thông tin đơn hàng"
+Mục đích	"User xem thông tin đơn hàng đã thanh toán"
+Tác nhân	"User"
+Điều kiện trước	"User đã đăng nhập thành công	 User có đơn hàng đã thanh toán"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. User chọn đơn hàng mình muốn xem
+2. Hệ thống truy xuất Cơ sở dữ liệu để lấy chi tiết đơn hàng được chọn
+3. Hệ thống hiển thị chi tiết đơn hàng được chọn"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Xem danh sách sản phẩm yêu thích"
+Mục đích	"User xem danh sách các sản phẩm mình đã yêu thích"
+Tác nhân	"User"
+Điều kiện trước	"User đã đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. User yêu cầu danh sách sản phẩm yêu thích
+2. Hệ thống truy xuất Cơ sở dữ liệu để lấy danh sách sản phẩm yêu thích
+3. Hệ thống hiển thị danh sách sản phẩm yêu thích"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Xem thông tin lịch sử giao hàng"
+Mục đích	"User xem thông tin lịch sử giao hàng của đơn hàng đã thanh toán"
+Tác nhân	"User"
+Điều kiện trước	"User đã đăng nhập thành công	 User có đơn hàng đã thanh toán"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. User chọn đơn hàng mình muốn xem lịch sử giao hàng
+2. Hệ thống truy xuất Cơ sở dữ liệu để lấy lịch sử giao hàng của đơn hàng được chọn
+3. Hệ thống hiển thị lịch sử giao hàng"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Xem thông báo (Notification)"
+Mục đích	"User xem thông báo nhận được từ hệ thống"
+Tác nhân	"User"
+Điều kiện trước	"User đã đăng nhập"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. User truy cập danh sách thông báo
+2. Hệ thống truy xuất Cơ sở dữ liệu để lấy danh sách thông báo của User
+3. Hệ thống hiển thị danh sách thông báo
+4. User chọn thông báo để xem nội dung thông báo"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Xem lịch sử giao dịch"
+Mục đích	"User xem thông tin lịch sử giao dịch của mình"
+Tác nhân	"User"
+Điều kiện trước	"User đã đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. User truy cập lịch sử giao dịch
+2. Hệ thống truy xuất Cơ sở dữ liệu để lấy lịch sử giao dịch của User
+3. Hệ thống hiển thị lịch sử giao dịch"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Xem danh sách đánh giá sản phẩm"
+Mục đích	"User xem các đánh giá của sản phẩm"
+Tác nhân	"User"
+Điều kiện trước	"User đang xem chi tiết sản phẩm"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. User truy cập đánh giá của sản phẩm
+2. Hệ thống truy xuất Cơ sở dữ liệu để lấy danh sách đánh giá của sản phẩm
+3. Hệ thống hiển thị danh sách đánh giá sản phẩm"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Đặt câu hỏi"
+Mục đích	"User đặt câu hỏi cho Bác sĩ"
+Tác nhân	"User"
+Điều kiện trước	"User đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. User đặt câu hỏi
+2. Hệ thống lưu trữ câu hỏi vào Cơ sở dữ liệu
+3. Hệ thống thông báo câu hỏi đã được đăng tải"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Làm khảo sát"
+Mục đích	"User thực hiện khảo sát để nhận được reward và giúp hệ thống hiểu rõ hơn về mình"
+Tác nhân	"User"
+Điều kiện trước	"User đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. User yêu cầu thực hiện khảo sát
+2. Hệ thống Truy xuất Cơ sở dữ liệu để lấy bộ câu hỏi khảo sát
+3. Hệ thống hiển thị bộ câu hỏi khảo sát
+4. User trả lời khảo sát
+5. Hệ thống lưu kết quả khảo sát vào Cơ sở dữ liệu
+6. Hệ thống thực hiện phân loại User dựa trên kết quả khảo sát
+7. Hệ thống hiển thị kết quả phân loại của User"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Xóa bài viết"
+Mục đích	"User xóa bài viết trên MXH của mình"
+Tác nhân	"User"
+Điều kiện trước	"User đăng nhập thành công	 User có bài viết cần xóa"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. User yêu cầu xóa bài viết được chọn
+2. Hệ thống đánh dấu bài viết trong Cơ sở dữ liệu là đã bị xóa
+3. Hệ thống thông báo bài viết đã được xóa"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Thích bài viết"
+Mục đích	"User thích bài viết trên MXH"
+Tác nhân	"User"
+Điều kiện trước	"User đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. User chọn thích bài viết
+2. Hệ thống thêm User vào danh sách User thích bài viết
+3. Hệ thống cập nhật danh sách thích bài viết trong Cơ sở dữ liệu
+4. Hệ thống hiển thị bài viết đã được thích"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Chỉnh sửa bài viết"
+Mục đích	"User chỉnh sửa bài viết trên MXH của mình"
+Tác nhân	"User"
+Điều kiện trước	"User đăng nhập thành công	 User có bài viết cần sửa"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. User yêu cầu chỉnh sửa bài viết
+2. Hệ thống hiển thị mẫu để chỉnh sửa bài viết
+3. User thực hiện chỉnh sửa bài viết
+4. Hệ thống cập nhật bài viết trong Cơ sở dữ liệu
+5. Hệ thống hiển thị bài viết đã được chỉnh sửa"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Lưu bài viết"
+Mục đích	"User lưu bài viết trên MXH để xem sau"
+Tác nhân	"User"
+Điều kiện trước	"User đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. User chọn lưu bài viết
+2. Hệ thống thêm bài viết vào danh sách bài viết được lưu của User
+3. Hệ thống cập nhật vào trong Cơ sở dữ liệu
+4. Hệ thổng thông báo bài viết đã được lưu"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Bình luận bài viết"
+Mục đích	"User bình luận về bài viết trên MXH"
+Tác nhân	"User"
+Điều kiện trước	"User đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. User chọn bình luận bài viết
+2. Hệ thống hiển thị mẫu để nhập bình luận
+3. User thực hiện nhập bình luận về bài viết
+4. Hệ thống lưu trữ bình luận vào Cơ sở dữ liệu
+5. Hệ thống hiển thị bình luận"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Đăng bài viết"
+Mục đích	"User đăng tải bài viết lên MXH"
+Tác nhân	"User"
+Điều kiện trước	"User đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. User chọn đăng tải bài viết mới
+2. Hệ thống hiển thị mẫu để tạo bài viết
+3. User thực hiện tạo bài viết mới
+4. Hệ thống lưu trữ bài viết mới vào Cơ sở dữ liệu
+5. Hệ thống yêu cầu kiểm duyệt cho bài viết
+6. Admin thực hiện kiểm duyệt cho bài viết
+7. Hệ thống hiển thị bài viết trên MXH"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"6a. Bài viết không thông qua kiểm duyệt
+6a1. Hệ thống thông báo cho User rằng bài viết không thông qua kiểm duyệt
+Usecase dừng lại"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Xóa User"
+Mục đích	"Admin xóa User ra khỏi hệ thống"
+Tác nhân	"Admin"
+Điều kiện trước	"Admin đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Admin chọn tài khoản User cần xóa và thực hiện yêu cầu xóa
+2. Hệ thống đánh dấu tài khoản User trong Cơ sở dữ liệu là đã xóa
+3. Hệ thống thông báo đã xóa tài khoản User"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Thêm User"
+Mục đích	"Admin tạo tài khoản cho User"
+Tác nhân	"Admin"
+Điều kiện trước	"Admin đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Admin yêu cầu tạo tài khoản cho User
+2. Hệ thống hiển thị mẫu để tạo tài khoản
+3. Admin nhập các thông tin tài khoản
+4. Hệ thống xác nhận các thông tin đúng định dạng
+5. Hệ thống tạo tài khoản cho User dựa theo thông tin đã nhập vào Cơ sở dữ liệu"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"4a. Thông tin được nhập bị sai định dạng
+4a1. Hệ thống thông báo cho Admin về lỗi thông tin
+Usecase tiếp tục bước 3"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Chỉnh sửa thông tin cho User"
+Mục đích	"Admin chỉnh sửa thông tin cho User"
+Tác nhân	"Admin"
+Điều kiện trước	"Admin đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Admin chọn User cần chỉnh sửa và yêu cầu chỉnh sửa
+2. Hệ thống hiển thị mẫu để chỉnh sửa thông tin
+3. Admin thực hiện chỉnh sửa thông tin
+4. Hệ thống xác nhận thông tin đã chỉnh sửa đúng định dạng
+5. Hệ thống cập nhật thông tin đã chỉnh sửa vào Cơ sở dữ liệu"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"4a. Thong tin được nhập bị sai định dạng
+4a1. Hệ thống thông báo cho Admin về lỗi thông tin
+Usecase tiếp tục bước 3"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Tìm kiếm User"
+Mục đích	"Admin tìm kiếm User trong hệ thống"
+Tác nhân	"Admin"
+Điều kiện trước	"Admin đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Admin yêu cầu tìm kiếm User với thông số
+2. Hệ thống truy xuất Cơ sở dữ liệu dựa trên thông số tìm kiếm User
+3. Hệ thống hiển thị danh sách User thỏa thông số tìm kiếm"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Thêm sản phẩm"
+Mục đích	"Admin thêm sản phẩm vào hệ thống"
+Tác nhân	"Admin"
+Điều kiện trước	"Admin đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Admin nhập thông tin sản phẩm theo mẫu
+2. Hệ thống xác nhận thông tin nhập vào đúng định dạng
+3. Hệ thống lưu trữ thông tin sản phẩm mới vào Cơ sở dữ liệu"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"2a. Thông tin sản phẩm nhập bị sai định dạng
+2a1. Hệ thống thông báo cho Admin về lỗi thông tin
+Usecase tiếp tục bước 1"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Xóa sản phẩm"
+Mục đích	"Admin xóa sản phẩm khỏi hệ thống"
+Tác nhân	"Admin"
+Điều kiện trước	"Admin đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Admin chọn sản phẩm cần xóa và chọn Xóa sản phẩm
+2. Hệ thống đánh dấu sản phẩm trong Cơ sở dữ liệu là đã xóa
+3. Hệ thống thông báo sản phẩm đã bị xóa"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Cập nhật sản phẩm"
+Mục đích	"Admin cập nhật thông tin sản phẩm"
+Tác nhân	"Admin"
+Điều kiện trước	"Admin đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Admin chọn sản phẩm cần cập nhật thông tin và chọn cập nhật
+2. Hệ thống hiển thị mẫu để nhập thông tin cập nhật
+3. Admin cập nhật thông tin trên mẫu
+4. Hệ thống xác nhận thông tin được cập nhật đúng định dạng
+5. Hệ thống cập nhật thông tin vào Cơ sở dữ liệu"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"4a. Thông tin cập nhật sai định dạng
+4a1. Hệ thống thông báo cho admin về lỗi thông tin
+Usecase tiếp tục bước 3"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Tìm kiếm sản phẩm"
+Mục đích	"Admin tìm kiếm sản phẩm"
+Tác nhân	"Admin"
+Điều kiện trước	"Admin đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Admin yêu cầu tìm kiếm sản phẩm với thông số
+2. Hệ thống truy xuất Cơ sở dữ liệu dựa trên thông số tìm kiếm sản phẩm
+3. Hệ thống hiển thị danh sách sản phẩm thỏa thông số tìm kiếm"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Xóa hoạt chất"
+Mục đích	"Admin xóa hoạt chất khỏi hệ thống"
+Tác nhân	"Admin"
+Điều kiện trước	"Admin đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Admin chọn hoạt chất cần xóa và chọn Xóa hoạt chất
+2. Hệ thống đánh dấu hoạt chất trong Cơ sở dữ liệu là đã xóa
+3. Hệ thống thông báo hoạt chất đã bị xóa"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Cập nhật hoạt chất"
+Mục đích	"Admin cập nhật thông tin hoạt chất"
+Tác nhân	"Admin"
+Điều kiện trước	"Admin đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Admin chọn hoạt chất cần cập nhật thông tin và chọn cập nhật
+2. Hệ thống hiển thị mẫu để nhập thông tin cập nhật
+3. Admin cập nhật thông tin trên mẫu
+4. Hệ thống xác nhận thông tin được cập nhật đúng định dạng
+5. Hệ thống cập nhật thông tin vào Cơ sở dữ liệu"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"4a. Thông tin cập nhật sai định dạng
+4a1. Hệ thống thông báo cho admin về lỗi thông tin
+Usecase tiếp tục bước 3"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Tìm kiếm hoạt chất"
+Mục đích	"Admin tìm kiếm hoạt chất"
+Tác nhân	"Admin"
+Điều kiện trước	"Admin đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Admin yêu cầu tìm kiếm hoạt chất với thông số
+2. Hệ thống truy xuất Cơ sở dữ liệu dựa trên thông số tìm kiếm hoạt chất
+3. Hệ thống hiển thị danh sách hoạt chất thỏa thông số tìm kiếm"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Xóa sản phẩm"
+Mục đích	"Chủ cửa hàng xóa sản phẩm khỏi hệ thống"
+Tác nhân	"Chủ cửa hàng"
+Điều kiện trước	"Chủ cửa hàng đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Chủ cửa hàng chọn sản phẩm cần xóa và chọn Xóa sản phẩm
+2. Hệ thống đánh dấu sản phẩm trong Cơ sở dữ liệu là đã xóa
+3. Hệ thống thông báo sản phẩm đã bị xóa"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Cập nhật sản phẩm"
+Mục đích	"Chủ cửa hàng cập nhật thông tin sản phẩm"
+Tác nhân	"Chủ cửa hàng"
+Điều kiện trước	"Chủ cửa hàng đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Chủ cửa hàng chọn sản phẩm cần cập nhật thông tin và chọn cập nhật
+2. Hệ thống hiển thị mẫu để nhập thông tin cập nhật
+3. Chủ cửa hàng cập nhật thông tin trên mẫu
+4. Hệ thống xác nhận thông tin được cập nhật đúng định dạng
+5. Hệ thống cập nhật thông tin vào Cơ sở dữ liệu"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"4a. Thông tin cập nhật sai định dạng
+4a1. Hệ thống thông báo cho Chủ cửa hàng về lỗi thông tin
+Usecase tiếp tục bước 3"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Tìm kiếm sản phẩm"
+Mục đích	"Chủ cửa hàng tìm kiếm sản phẩm"
+Tác nhân	"Chủ cửa hàng"
+Điều kiện trước	"Chủ cửa hàng đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Chủ cửa hàng yêu cầu tìm kiếm sản phẩm với thông số
+2. Hệ thống truy xuất Cơ sở dữ liệu dựa trên thông số tìm kiếm sản phẩm
+3. Hệ thống hiển thị danh sách sản phẩm thỏa thông số tìm kiếm"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Xóa đơn hàng"
+Mục đích	"Chủ cửa hàng xóa đơn hàng khỏi hệ thống"
+Tác nhân	"Chủ cửa hàng"
+Điều kiện trước	"Chủ cửa hàng đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Chủ cửa hàng chọn đơn hàng cần xóa và chọn Xóa đơn hàng
+2. Hệ thống đánh dấu đơn hàng trong Cơ sở dữ liệu là đã xóa
+3. Hệ thống thông báo đơn hàng đã bị xóa"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Duyệt đơn hàng"
+Mục đích	"Chủ cửa hàng duyệt thông tin đơn hàng"
+Tác nhân	"Chủ cửa hàng"
+Điều kiện trước	"Chủ cửa hàng đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Chủ cửa hàng chọn đơn hàng cần duyệt và chọn duyệt đơn
+2. Hệ thống cập nhật trạng thái đơn hàng là đã duyệt
+3. Hệ thống thông báo cho Chủ cửa hàng đã duyệt đơn hàng"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Tìm kiếm đơn hàng"
+Mục đích	"Chủ cửa hàng tìm kiếm đơn hàng"
+Tác nhân	"Chủ cửa hàng"
+Điều kiện trước	"Chủ cửa hàng đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Chủ cửa hàng yêu cầu tìm kiếm đơn hàng với thông số
+2. Hệ thống truy xuất Cơ sở dữ liệu dựa trên thông số tìm kiếm đơn hàng
+3. Hệ thống hiển thị danh sách đơn hàng thỏa thông số tìm kiếm"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Xem câu hỏi"
+Mục đích	"Bác sĩ xem danh sách câu hỏi được hỏi"
+Tác nhân	"Bác sĩ"
+Điều kiện trước	"Bác sĩ đăng nhập thành công"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Bác sĩ yêu cầu xem danh sách câu hỏi
+2. Hệ thống truy xuất Cơ sở dữ liệu lấy danh sách câu hỏi được hỏi
+3. Hệ thống hiển thị danh sách cho bác sĩ"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
+Tên	"Trả lời câu hỏi"
+Mục đích	"Bác sĩ trả lời câu hỏi"
+Tác nhân	"Bác sĩ	 User"
+Điều kiện trước	"Bác sĩ đăng nhập thành công	 Tồn tại câu hỏi để trả lời"
+Điều kiện sau	"Không có"
+Luồng sự kiện chính	"1. Bác sĩ nhập câu trả lời vào mẫu trả lời
+2. Hệ thống lưu trữ câu trả lời vào Cơ sở dữ liệu
+3. Hệ thống thông báo cho User đã đặt câu hỏi"
+Luồng sự kiện phụ	"Không có"
+Các ngoại lệ	"Không có"
+Kích hoạt sự kiện khác	"Không có"
+	
